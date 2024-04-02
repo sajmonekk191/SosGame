@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="Apps\Main\Game\ConnectServer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Apps\Main\Game\CreateServer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Apps\Main\Game\Lobby.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Apps\Main\Game\MiniGames\Chests.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Apps\Main\Loader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Apps\Main\Hub\AditionalForms\FormImageTooltip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Apps\Main\Hub\LevelMaker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Apps\Main\MainApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CustomControls\DarkLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="CustomControls\AltoButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="CustomControls\AltoTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="CustomControls\DarkCombobox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="CustomControls\DarkPicturebox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="CustomControls\DarkTextbox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="CustomControls\SpinningCircles.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="CustomControls\SwitchButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
