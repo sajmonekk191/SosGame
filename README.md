@@ -1,1 +1,2 @@
-#Maturitní projekt - Edukativní winform hra s předměty (Čestina, Matematika, Angličtina, IT, programovani)
+Maturitní projekt - Edukativní aplikace v C#
+
