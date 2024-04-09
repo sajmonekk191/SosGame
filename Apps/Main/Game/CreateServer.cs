@@ -1,6 +1,4 @@
-﻿// Dodělat pokud je Freeze tak GameTimer pořád jede
-// Fixnout .csv 
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
 using System.Runtime.InteropServices;
@@ -881,16 +879,21 @@ namespace SOS_Essential.Apps.Main.Game
         {
             StringBuilder csvContent = new StringBuilder();
 
-            csvContent.AppendLine("Name,Score,Questions");
+            csvContent.AppendLine("Name,Score,Questions,Stars");
 
             foreach (string item in UserList.Items)
             {
-                string[] userInfo = item.Split(new string[] { "Score: ", "Questions: " }, StringSplitOptions.RemoveEmptyEntries);
+                string[] userInfo = item.Split(new string[] { "Score: ", "Questions: ", "Stars: " }, StringSplitOptions.RemoveEmptyEntries);
                 string[] nameParts = userInfo[0].Split(' ');
                 string name = nameParts[0];
                 string score = userInfo.Length > 1 ? userInfo[1] : "";
                 string questions = userInfo.Length > 2 ? userInfo[2] : "";
-                csvContent.AppendLine($"{name},{score},{questions}");
+                string stars = userInfo.Length > 3 ? userInfo[3] : "";
+
+                // Spočítáme hvězdy
+                int starCount = stars.Count(f => f == '★');
+
+                csvContent.AppendLine($"{name},{score},{questions},{starCount}");
             }
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -901,8 +904,8 @@ namespace SOS_Essential.Apps.Main.Game
                 File.WriteAllText(saveFileDialog.FileName, csvContent.ToString());
                 MessageBox.Show("UserList has been exported to CSV successfully!", "Export to CSV", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
         }
+
         #endregion
 
     }

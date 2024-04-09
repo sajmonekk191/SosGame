@@ -199,13 +199,13 @@ namespace SOS_Essential.Apps.Main.Game.MiniGames
             freezePanel.Controls.Add(countdownLabel);
             this.Controls.Add(freezePanel);
             freezePanel.BringToFront();
-
+            connectServer.GameTimerTicker.Stop();
             for (int seconds = 10; seconds > 0; seconds--)
             {
                 countdownLabel.Text = seconds.ToString();
                 await Task.Delay(1000);
             }
-
+            connectServer.GameTimerTicker.Start();
             this.Controls.Remove(freezePanel);
             freezePanel.Dispose();
         }

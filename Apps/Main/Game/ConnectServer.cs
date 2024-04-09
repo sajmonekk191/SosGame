@@ -41,7 +41,7 @@ namespace SOS_Essential.Apps.Main.Game
         public bool IsTimer = false;
         public int TimerValue;
         private Random rnd = new Random();
-        private System.Windows.Forms.Timer GameTimerTicker = new System.Windows.Forms.Timer();
+        public System.Windows.Forms.Timer GameTimerTicker = new System.Windows.Forms.Timer();
         private System.Timers.Timer updateUserList = new System.Timers.Timer(1000);
 
         // User //
@@ -173,13 +173,13 @@ namespace SOS_Essential.Apps.Main.Game
 
             this.Controls.Add(freezePanel);
             freezePanel.BringToFront();
-
+            GameTimerTicker.Stop();
             for (int seconds = 5; seconds >= 0; seconds--)
             {
                 countdownLabel.Text = seconds.ToString();
                 await Task.Delay(1000);
             }
-
+            GameTimerTicker.Start();
             this.Controls.Remove(freezePanel);
             freezePanel.Dispose();
         }
@@ -960,7 +960,7 @@ namespace SOS_Essential.Apps.Main.Game
         }
         #endregion
         #region Timers
-        private void GameTimer_Tick(object sender, EventArgs e)
+        private async void GameTimer_Tick(object sender, EventArgs e)
         {
             if (IsTimer)
             {
@@ -972,6 +972,14 @@ namespace SOS_Essential.Apps.Main.Game
                 {
                     GameTimerTicker.Stop();
                     Answer1btn.Enabled = Answer2btn.Enabled = Answer3btn.Enabled = Answer4btn.Enabled = false;
+                    if (currentQuestionIndex == questions.Count - 1)
+                    {
+                        await SendResponseAsync(CreateMessage("QUESTION", $"{Username} Questions: {currentQuestionIndex + 1}/{currentQuestionIndex + 1}"), stream);
+                    }
+                    else
+                    {
+                        await SendResponseAsync(CreateMessage("QUESTION", $"{Username} Questions: {currentQuestionIndex + 1}"), stream);
+                    }
                     foreach (var button in new[] { Answer1btn, Answer2btn, Answer3btn, Answer4btn })
                     {
                         if (currentQuestion.CorrectAnswers.Contains(button.Text))

@@ -530,6 +530,6 @@
         public Label Questionlbl;
         public Label AnswersDonelbl;
         public Label TimeLeftlbl;
-        private MetroFramework.Controls.MetroProgressBar GameTimer;
+        public MetroFramework.Controls.MetroProgressBar GameTimer;
     }
 }
