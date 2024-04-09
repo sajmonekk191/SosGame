@@ -4,11 +4,12 @@ namespace SOS_Essential.Apps.Main.Game
 {
     public partial class Lobby : UserControl
     {
+        #region Hodnoty
         CreateServer createServerControl;
         ConnectServer connectServerControl;
 
         ToolTip toolTip = new ToolTip();
-
+        #endregion
         public Lobby()
         {
             InitializeComponent();
@@ -103,7 +104,7 @@ namespace SOS_Essential.Apps.Main.Game
 
         // Back Button //
         #endregion
-
+        #region Other
         private void JoinServer_Click(object sender, EventArgs e)
         {
             // Add and show ConnectServerControl
@@ -139,5 +140,6 @@ namespace SOS_Essential.Apps.Main.Game
             MainApp.Instance.ShowOrHideControls(true);
             this.Visible = false;
         }
+        #endregion
     }
 }

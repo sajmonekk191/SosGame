@@ -5,6 +5,7 @@ using System.Windows.Forms;
 
 namespace SOS_Essential.CustomControls
 {
+    #region LoadingCircle
     public class SpinningCircles : Control
     {
         bool fullTransparency = true;
@@ -107,4 +108,5 @@ namespace SOS_Essential.CustomControls
             }
         }
     }
+    #endregion
 }

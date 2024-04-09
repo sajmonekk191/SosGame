@@ -5,6 +5,7 @@ namespace SOS_Essential.Essentials.User
 {
     class Account
     {
+        #region Database Code
         private static string connectionString = "Server=localhost;Port=3306;Database=SosGame;Uid=ahoj;Pwd=123;";
         public static string Username = "";
         public static string Nickname = "";
@@ -89,5 +90,6 @@ namespace SOS_Essential.Essentials.User
             }
             catch { }
         }
+        #endregion
     }
 }

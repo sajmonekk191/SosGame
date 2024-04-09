@@ -6,16 +6,19 @@ namespace SOS_Essential.Apps.Main.Lobby
 {
     public partial class LevelMaker : UserControl
     {
+        #region Hodnoty
         private FormImageTooltip tooltipForm;
         ToolTip helpToolTip = new ToolTip();
         public readonly string dataFolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "SosGameData");
+        #endregion
         public LevelMaker()
         {
             InitializeComponent();
-
+            #region Setup ToolTip
             helpToolTip.SetToolTip(this.Helplbl, "Here is how you can use the LevelMaker:\n- Click 'Load' to open an existing .sos file.\n- Edit the level as needed.\n- Click 'Save' to save your changes.\n- Click 'Open Level Folder' to see all levels folder.");
             Image tooltipImage = Properties.Resources.Info;
             tooltipForm = new FormImageTooltip(tooltipImage);
+            #endregion
             #region AppMoving
             // App Moving //
             this.MouseDown += (sender, e) =>
@@ -87,7 +90,7 @@ namespace SOS_Essential.Apps.Main.Lobby
         }
         // Help Label Tooltip //
         #endregion
-
+        #region Buttons
         private void LoadFilebtn_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog
@@ -187,5 +190,6 @@ namespace SOS_Essential.Apps.Main.Lobby
                 }
             }
         }
+        #endregion
     }
 }

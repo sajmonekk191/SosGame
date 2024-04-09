@@ -9,7 +9,6 @@ namespace SOS_Essential.CustomControls
     {
         public delegate void SliderChangedEventHandler(object sender, EventArgs e);
         public event SliderChangedEventHandler SliderValueChanged;
-
         #region Variables
         float diameter;
         RoundedRectangleF rect;
@@ -20,7 +19,6 @@ namespace SOS_Essential.CustomControls
         private bool textEnabled;
         System.Windows.Forms.Timer paintTicker = new System.Windows.Forms.Timer();
         #endregion
-
         #region Properties
         public bool TextEnabled
         {
@@ -54,7 +52,7 @@ namespace SOS_Essential.CustomControls
         }
 
         #endregion
-
+        #region SlideButton
         public SlideButton()
         {
             SetStyle(ControlStyles.UserPaint, true);
@@ -197,6 +195,7 @@ namespace SOS_Essential.CustomControls
 
             base.OnMouseClick(e);
         }
+        #endregion
     }
 
 }

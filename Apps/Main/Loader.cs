@@ -12,7 +12,7 @@ namespace SOS_Essential.Apps.Main
         {
             InitializeComponent();
         }
-
+        #region Load
         private void Loader_Load(object sender, EventArgs e)
         {
             this.TopMost = true;
@@ -63,5 +63,6 @@ namespace SOS_Essential.Apps.Main
             while (thread.IsAlive)
                 Application.DoEvents();
         }
+        #endregion
     }
 }

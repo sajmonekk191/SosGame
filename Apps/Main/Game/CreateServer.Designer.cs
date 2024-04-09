@@ -52,6 +52,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.BackButton = new ClassicDarkTheme.Dark.DarkPicturebox();
             this.ServerLobby = new System.Windows.Forms.Panel();
+            this.ConvertToExcel = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.UserList = new System.Windows.Forms.ListBox();
             this.StartGamebtn = new SOS_Essential.CustomControls.AltoButton();
@@ -66,6 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PreviewPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BackButton)).BeginInit();
             this.ServerLobby.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ConvertToExcel)).BeginInit();
             this.SuspendLayout();
             // 
             // CreateServerLBL
@@ -386,6 +388,7 @@
             // 
             this.ServerLobby.BackColor = System.Drawing.Color.White;
             this.ServerLobby.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ServerLobby.Controls.Add(this.ConvertToExcel);
             this.ServerLobby.Controls.Add(this.label1);
             this.ServerLobby.Controls.Add(this.UserList);
             this.ServerLobby.Controls.Add(this.StartGamebtn);
@@ -398,6 +401,18 @@
             this.ServerLobby.Size = new System.Drawing.Size(1068, 624);
             this.ServerLobby.TabIndex = 7;
             this.ServerLobby.Visible = false;
+            // 
+            // ConvertToExcel
+            // 
+            this.ConvertToExcel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ConvertToExcel.Image = global::SOS_Essential.Properties.Resources.Excel;
+            this.ConvertToExcel.Location = new System.Drawing.Point(1004, 563);
+            this.ConvertToExcel.Name = "ConvertToExcel";
+            this.ConvertToExcel.Size = new System.Drawing.Size(35, 35);
+            this.ConvertToExcel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ConvertToExcel.TabIndex = 8;
+            this.ConvertToExcel.TabStop = false;
+            this.ConvertToExcel.Click += new System.EventHandler(this.ConvertToExcel_Click);
             // 
             // label1
             // 
@@ -525,6 +540,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BackButton)).EndInit();
             this.ServerLobby.ResumeLayout(false);
             this.ServerLobby.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ConvertToExcel)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -565,5 +581,6 @@
         private Label Gametimerlbl;
         private CustomControls.SlideButton GameTimerslider;
         private NumericUpDown GameTimernumeric;
+        private PictureBox ConvertToExcel;
     }
 }

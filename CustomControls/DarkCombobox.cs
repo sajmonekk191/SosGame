@@ -9,6 +9,7 @@ using System.Windows.Forms;
 
 namespace ClassicDarkTheme.Dark
 {
+    #region ComboBox
     class DarkCombobox : ComboBox
     {
         private const int WM_PAINT = 0xF;
@@ -71,4 +72,5 @@ namespace ClassicDarkTheme.Dark
             e.DrawFocusRectangle();
         }
     }
+    #endregion
 }

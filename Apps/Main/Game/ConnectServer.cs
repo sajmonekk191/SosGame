@@ -794,7 +794,7 @@ namespace SOS_Essential.Apps.Main.Game
             stream = client.GetStream();
             if (currentQuestionIndex == questions.Count -1)
             {
-                await SendResponseAsync(CreateMessage("QUESTION", $"{Username} Questions: Done"), stream);
+                await SendResponseAsync(CreateMessage("QUESTION", $"{Username} Questions: {currentQuestionIndex + 1}/{currentQuestionIndex + 1}"), stream);
             }
             else
             {
@@ -987,7 +987,7 @@ namespace SOS_Essential.Apps.Main.Game
                 }
             }
         }
-        private async void updateUserList_Tick(object sender, EventArgs e) { await SendResponseAsync(CreateMessage("USER_LIST", ""), stream); }
+        private async void updateUserList_Tick(object sender, EventArgs e) { try { await SendResponseAsync(CreateMessage("USER_LIST", ""), stream); } catch { } }
         #endregion
         #region ConnectExternalServer
         private async void AddServer_Click(object sender, EventArgs e)

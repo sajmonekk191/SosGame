@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace ClassicDarkTheme.Dark
 {
+    #region DarkLabel
     public class DarkLabel : Label
     {
         [Category("Dark")]
@@ -39,4 +40,5 @@ namespace ClassicDarkTheme.Dark
             }
         }
     }
+    #endregion
 }

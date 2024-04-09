@@ -6,13 +6,14 @@ namespace SOS_Essential.Apps.Main
 {
     public partial class MainApp : Form
     {
+        #region Hodnoty
         public static MainApp Instance { get; private set; }
 
         Game.Lobby lobbyControl = new Game.Lobby();
         CreateServer server = new CreateServer();
         ConnectServer client = new ConnectServer();
         Lobby.LevelMaker lvlmaker = new Lobby.LevelMaker();
-
+        #endregion
         public MainApp()
         {
             InitializeComponent();
@@ -137,7 +138,7 @@ namespace SOS_Essential.Apps.Main
         // Hide/Show Controls //
 
         #endregion nastaveni appky
-
+        #region Buttons
         // Buttons //
 
         private async void ExitButton_Click(object sender, EventArgs e)
@@ -173,5 +174,6 @@ namespace SOS_Essential.Apps.Main
         }
 
         // Buttons //
+        #endregion
     }
 }

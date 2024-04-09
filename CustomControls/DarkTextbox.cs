@@ -3,6 +3,7 @@ namespace ClassicDarkTheme.Dark
 {
     public partial class DarkTextbox : Control
     {
+        #region DarkTextBox
         private Color _MainColor = Dark.DefaultButtonBackColor, _BorderColor = Dark.DefaultBorderColor, _ForeColor = Color.White;
         private string _Text = "";
         private bool _OnlyNumbers = false;
@@ -152,5 +153,6 @@ namespace ClassicDarkTheme.Dark
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
             }
         }
+        #endregion
     }
 }

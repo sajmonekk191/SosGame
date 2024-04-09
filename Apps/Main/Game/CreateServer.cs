@@ -1,8 +1,9 @@
 ﻿// Dodělat pokud je Freeze tak GameTimer pořád jede
-
+// Fixnout .csv 
 using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
@@ -876,6 +877,33 @@ namespace SOS_Essential.Apps.Main.Game
         #endregion
         #region Other
         private void GameTimerslider_SliderValueChanged(object sender, EventArgs e) { GameTimernumeric.Visible = GameTimerslider.IsOn; }
+        private void ConvertToExcel_Click(object sender, EventArgs e)
+        {
+            StringBuilder csvContent = new StringBuilder();
+
+            csvContent.AppendLine("Name,Score,Questions");
+
+            foreach (string item in UserList.Items)
+            {
+                string[] userInfo = item.Split(new string[] { "Score: ", "Questions: " }, StringSplitOptions.RemoveEmptyEntries);
+                string[] nameParts = userInfo[0].Split(' ');
+                string name = nameParts[0];
+                string score = userInfo.Length > 1 ? userInfo[1] : "";
+                string questions = userInfo.Length > 2 ? userInfo[2] : "";
+                csvContent.AppendLine($"{name},{score},{questions}");
+            }
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*";
+            saveFileDialog.FileName = "UserList.csv";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                File.WriteAllText(saveFileDialog.FileName, csvContent.ToString());
+                MessageBox.Show("UserList has been exported to CSV successfully!", "Export to CSV", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+        }
         #endregion
+
     }
 }

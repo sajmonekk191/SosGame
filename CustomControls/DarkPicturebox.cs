@@ -50,7 +50,7 @@ namespace ClassicDarkTheme.Dark
             this.RecreateRegion();
         }
         #endregion
-
+        #region PictureBox
         public DarkPicturebox()
         {
             SetStyle(ControlStyles.AllPaintingInWmPaint |
@@ -68,5 +68,6 @@ namespace ClassicDarkTheme.Dark
             g.InterpolationMode = InterpolationMode.High;
             g.CompositingQuality = CompositingQuality.HighQuality;
         }
+        #endregion
     }
 }
