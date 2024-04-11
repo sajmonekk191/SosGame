@@ -1,2 +1,5 @@
-Maturitní projekt - Edukativní aplikace v C#
+SOŠGame - Educational application in C#
+
+How to download and setup
+1. 
 
